@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using StringCalculatorKata.App;
 
 namespace StringCalculatorKata.App
 {
@@ -9,7 +11,29 @@ namespace StringCalculatorKata.App
         {
             if (string.IsNullOrEmpty(numbers)) return 0;
 
-            return numbers.Split(delimiter).Where(x=>x.Length < 3).Sum(x => int.Parse(x));
+            if (numbers.IndexOf("0,1,1,2,3,5,8".Replace(delimiter, ',')) == 0)
+            {
+                throw new FibonacciAlertException();
+            }
+
+            foreach (var n in numbers.Split(delimiter))
+            {
+                var test = 0;
+                if (!int.TryParse(n, out test))
+                {
+                    return 0;
+                }
+            }
+            
+            try
+            {
+                return numbers.Split(delimiter).Where(x => x.Length < 3).Sum(x => int.Parse(x));
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
         }
 
     }

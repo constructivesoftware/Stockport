@@ -14,6 +14,8 @@ namespace StringCalculatorKata.App
             var numbers = Console.ReadLine();
 
 
+            var n = new StringCalculator().Add(numbers, ',');
+
 
 
         }

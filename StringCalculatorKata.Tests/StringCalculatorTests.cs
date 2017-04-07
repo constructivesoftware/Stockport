@@ -1,4 +1,7 @@
-﻿using StringCalculatorKata.App;
+﻿using System;
+using System.Runtime.Remoting;
+using System.Security.Authentication;
+using StringCalculatorKata.App;
 using Xunit;
 using Xunit.Sdk;
 
@@ -11,12 +14,12 @@ namespace StringCalculatorKata.Tests
         {
             // Arrange
             var calculator = new StringCalculator();
-           
+
             // Action
-            var result=calculator.Add("", ',');
+            var result = calculator.Add("", ',');
 
             // Assert
-            Assert.Equal(result,0);
+            Assert.Equal(result, 0);
         }
 
         [Fact]
@@ -89,16 +92,31 @@ namespace StringCalculatorKata.Tests
             Assert.Equal(result, 3);
         }
 
-        [Fact(Skip = "complete previous test first")]
+        [Fact]
         public void Calculate_NonNumericValue_ReturnsZero()
         {
             //e.g. "1,Elephant,6" = 0
+            // Arrange
+            var calculator = new StringCalculator();
+
+            // Action
+            var result = calculator.Add("1,Elephant,6", ',');
+
+            // Assert
+            Assert.Equal(result, 0);
         }
 
-        [Fact(Skip = "complete previous test first")]
+        [Fact]
         public void Calculate_FirstSevenInFibonacciSequence_ThrowsCustomFibonacciAlertException()
         {
             //e.g. "0,1,1,2,3,5,8" = FibonacciAlertException!
+
+            // Arrange
+            var calculator = new StringCalculator();
+
+            // Action/Assert
+            Exception ex = Assert.Throws<FibonacciAlertException>(() => calculator.Add("0,1,1,2,3,5,8", ','));
+            
         }
     }
 }
