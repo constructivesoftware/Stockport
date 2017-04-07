@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1009]C:\Code\InterviewTest.StringCalculator\StringCalculatorKata.Tests\bin\Debug\StringCalculatorKata.Tests.dll</TopNode>
+  <SelectedNode>[0-1001]StringCalculatorKata.Tests.StringCalculatorTests.Calculate_EmptyString_ReturnsZero</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1009]C:\Code\InterviewTest.StringCalculator\StringCalculatorKata.Tests\bin\Debug\StringCalculatorKata.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1010]StringCalculatorKata" Expanded="true" />
+    <Node UniqueName="[0-1011]StringCalculatorKata.Tests" Expanded="true" />
+    <Node UniqueName="[0-1000]StringCalculatorKata.Tests.StringCalculatorTests" Expanded="true" />
+  </Nodes>
+</VisualState>
