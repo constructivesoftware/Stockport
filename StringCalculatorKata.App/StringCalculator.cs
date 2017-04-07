@@ -11,10 +11,7 @@ namespace StringCalculatorKata.App
         {
             if (string.IsNullOrEmpty(numbers)) return 0;
 
-            if (numbers.Replace(" ", "").IndexOf("0,1,1,2,3,5,8".Replace(delimiter, ','), StringComparison.Ordinal) == 0)
-            {
-                throw new FibonacciAlertException();
-            }
+            if (FirstSevenFibonacci(numbers, delimiter)) throw new FibonacciAlertException();
 
             foreach (var n in numbers.Split(delimiter))
             {
@@ -35,6 +32,12 @@ namespace StringCalculatorKata.App
             }
 
         }
+
+        private bool FirstSevenFibonacci(string s, char delimiter)
+        {
+            return s.Replace(" ", "").IndexOf("0,1,1,2,3,5,8".Replace(delimiter, ','), StringComparison.Ordinal) == 0;
+        }
+
 
     }
 }
