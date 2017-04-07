@@ -115,7 +115,7 @@ namespace StringCalculatorKata.Tests
             var calculator = new StringCalculator();
 
             // Action/Assert
-            Exception ex = Assert.Throws<FibonacciAlertException>(() => calculator.Add("0,1,1,2,3,5,8", ','));
+            Exception ex = Assert.Throws<FibonacciAlertException>(() => calculator.Add("0,  1,1,2,3    ,5,8", ','));
             
         }
     }
